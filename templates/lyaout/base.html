@@ -2,7 +2,7 @@
 <html lang="uk">
 <head>
   <meta charset="utf-8">
-  <title>Note++</title>
+  <title>NotePad</title>
 
   <!-- Bootstrap 5 + Icons CDN -->
   <link
@@ -16,7 +16,7 @@
 
 <nav class="navbar navbar-dark bg-dark border-bottom border-secondary">
   <div class="container-fluid">
-    <a class="navbar-brand fw-bold" href="#">Note++</a>
+    <a class="navbar-brand fw-bold" href="{% url "myapp:index" %}">NotePad</a>
 
     <ul class="navbar-nav flex-row gap-3">
       <li class="nav-item"><a class="nav-link" href="#">Можливості</a></li>
@@ -40,8 +40,6 @@
         </a>
       {% endif %}
     </div>
-
-  </div>
   </div>
 </nav>
 
