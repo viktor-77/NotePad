@@ -17,7 +17,7 @@ def index(request: HttpRequest) -> HttpResponse:
 
     return render(
         request,
-        'pages/notepad.html',
+        'pages/index.html',
         {'form': form, 'notes': Note.objects.all()}
     )
 
