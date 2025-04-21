@@ -1,0 +1,27 @@
+{% extends "lyaout/base.html" %}
+
+
+{% block content %}
+  <section class="py-5 text-center bg-secondary-subtle text-white">
+    <h1 class="display-5 fw-bold">Нотатка</h1>
+  </section>
+
+  <div class="container my-4 p-5">
+    <div class="card bg-dark-subtle rounded-4 border-2">
+      <div class="card-body">
+        <p class="card-text fs-5">
+          {{ note.body|linebreaksbr }}
+        </p>
+        <small class="text-muted d-block mt-3">
+          Створено: {{ note.created_at|date:"Y‑m‑d H:i" }}
+        </small>
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <a href="{% url 'myapp:index' %}" class="btn btn-outline-light btn-sm">
+        Назад до списку
+      </a>
+    </div>
+  </div>
+{% endblock %}
