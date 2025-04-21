@@ -1,6 +1,9 @@
 # 📓 NotePad — Онлайн Блокнот
 
 Простий онлайн-блокнот на Django: створення, перегляд та редагування нотаток.
+![image](https://github.com/user-attachments/assets/91cd5bdc-a34d-492e-b836-72542a149ad3)![image](https://github.com/user-attachments/assets/8c37d19a-656e-4413-92be-ecb52746b4d7)
+
+
 
 ---
 
