@@ -1,6 +1,8 @@
+from django.http import HttpResponseRedirect
 from django.http.request import HttpRequest
 from django.http.response import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render
+from django.urls import reverse
 from django.views.generic import DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -13,16 +15,16 @@ def index(request: HttpRequest) -> HttpResponse:
 
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('myapp:index')
+        return HttpResponseRedirect(reverse("myapp:index"))
 
     return render(
         request,
-        'pages/index.html',
-        {'form': form, 'notes': Note.objects.all()}
+        "pages/index.html",
+        {"form": form, "notes": Note.objects.all()}
     )
 
 
 class NoteDetailView(LoginRequiredMixin, DetailView):
     model = Note
-    context_object_name = 'note'
+    context_object_name = "note"
     template_name = "pages/note_detail.html"
