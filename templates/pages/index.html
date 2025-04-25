@@ -55,17 +55,20 @@
     <div class="notes py-5">
       <h5 class="text-info">Мої нотатки</h5>
       <ul class="list-group">
+
         {% for note in notes %}
           <li class="list-group-item">
             <a href="{% url "myapp:note_detail" note.pk %}">
               {{ note }}
             </a>
-            <small
-                class="text-muted d-block">{{ note.created_at|date:"Y‑m‑d H:i" }}</small>
+            <small class="text-muted d-block">
+              {{ note.created_at|date:"Y‑m‑d H:i" }}
+            </small>
           </li>
         {% empty %}
           <li class="list-group-item text-muted">Нотаток поки немає.</li>
         {% endfor %}
+
       </ul>
     </div>
   </div>
