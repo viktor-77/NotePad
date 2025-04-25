@@ -22,7 +22,7 @@ class NoteHomeView(View):
 
         if form.is_valid():
             form.save()
-            return redirect("index")
+            return redirect("myapp:index")
 
         return render(
             request,
