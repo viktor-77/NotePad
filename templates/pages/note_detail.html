@@ -2,24 +2,26 @@
 
 
 {% block content %}
-  <section class="py-5 text-center bg-secondary-subtle text-white">
+  <section class="py-5 text-center light-grey text-light">
     <h1 class="display-5 fw-bold">Нотатка</h1>
   </section>
 
   <div class="container my-4 p-5">
-    <div class="card bg-dark-subtle rounded-4 border-2">
-      <div class="card-body">
+    <div class="card light-grey rounded-3 border-2 border-secondary">
+      <div class="card-body text-light">
         <p class="card-text fs-5">
           {{ note.body|linebreaksbr }}
         </p>
-        <small class="text-muted d-block mt-3">
+        <hr>
+        <small class="d-block mt-3">
           Створено: {{ note.created_at|date:"Y‑m‑d H:i" }}
         </small>
       </div>
     </div>
 
     <div class="mt-4">
-      <a href="{% url 'myapp:index' %}" class="btn btn-outline-light btn-sm">
+      <a href="{% url 'myapp:index' %}"
+         class="btn btn-outline-secondary rounded text-light btn-sm">
         Назад до списку
       </a>
     </div>

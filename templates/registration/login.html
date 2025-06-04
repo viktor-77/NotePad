@@ -1,18 +1,53 @@
 {% extends "layout/base.html" %}
 
+{% load widget_tweaks %}
 
 {% block content %}
-  <div class="text-center p-5">
-    <h1>Login</h1>
+  <div class="container d-flex justify-content-center align-items-center p-5">
+    <form method="post" action="{% url 'login' %}" class="w-25">
 
-    {% if form.errors %}
-      <p class="text-danger">Invalid credentials</p>
-    {% endif %}
-
-    <form method="post" action="{% url 'login' %}">
+      {# CSRF Token #}
       {% csrf_token %}
-      {{ form.as_p }}
-      <input type="submit" value="Submit">
+
+      {# Form heading #}
+      <h1 class="mb-4 text-center text-white">
+        Login
+      </h1>
+
+      {# Non-field errors #}
+      {% if form.non_field_errors %}
+        <div class="alert alert-danger">
+          {% for error in form.non_field_errors %}
+            <div>{{ error }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      {# Form errors #}
+      {% if form.errors %}
+        <div class="alert alert-danger p-2 text-center">
+          Invalid credentials
+        </div>
+      {% endif %}
+
+      {# Username #}
+      <div class="mb-3">
+        <label for="{{ form.username.id_for_label }}"
+               class="form-label text-white">Username</label>
+        {{ form.username|add_class:"form-control bg-dark text-white border-secondary" }}
+      </div>
+
+      {# Password #}
+      <div class="mb-3">
+        <label for="{{ form.password.id_for_label }}"
+               class="form-label text-white">Password</label>
+        {{ form.password|add_class:"form-control bg-dark text-white border-secondary" }}
+      </div>
+
+      {# Submit button #}
+      <button type="submit" class="btn btn-primary w-100">
+        Sign up
+      </button>
     </form>
   </div>
 {% endblock %}

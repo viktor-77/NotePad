@@ -1,5 +1,11 @@
+from django.contrib.auth.models import AbstractUser
 from django.core.validators import MinLengthValidator
 from django.db import models
+
+
+class User(AbstractUser):
+    def __str__(self) -> str:
+        return self.username
 
 
 class Note(models.Model):
@@ -9,6 +15,13 @@ class Note(models.Model):
         validators=[MinLengthValidator(10)]
     )
     created_at = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name='notes',
+        null=True,
+        blank=True,
+    )
 
     class Meta:
         ordering = ("-created_at",)

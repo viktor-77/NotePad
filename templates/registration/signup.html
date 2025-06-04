@@ -1,0 +1,200 @@
+{# templates/registration/signup.html #}
+
+{% extends "layout/base.html" %}
+
+{% load widget_tweaks %}
+
+{% block content %}
+<div class="container w-25">
+  <form method="post"
+        class="mx-auto m-5 p-5 border rounded-3 border-secondary shadow-sm dark-grey"
+        novalidate>
+
+    {# CSRF token #}
+    {% csrf_token %}
+
+    {# Non-field errors #}
+    {% if form.non_field_errors %}
+    <div class="alert alert-danger">
+      {% for error in form.non_field_errors %}
+      <div>{{ error }}</div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {# Fields & errors #}
+    {% for field in form %}
+    <div class="mb-3">
+
+      {# Label #}
+      <label for="{{ field.id_for_label }}" class="form-label text-white">
+        {{ field.label }}
+      </label>
+
+      {# Field #}
+      {{ field|add_class:"form-control bg-dark text-white border-secondary" }}
+
+      {% for error in field.errors %}
+      <div class="invalid-feedback d-block">{{ error }}</div>
+      {% endfor %}
+
+    </div>
+    {% endfor %}
+
+    <button type="submit" class="btn btn-primary w-100 mt-4">
+      Sign up
+    </button>
+  </form>
+</div>
+{% endblock %}
+
+
+{#{% block content %}#}
+{#
+<div class="container w-25">#}
+  {#
+  <form method="post" #}
+        {#
+        class="mx-auto m-5 p-5 border rounded-3 border-secondary shadow-sm dark-grey"
+        #}
+        {# novalidate>#}
+    {##}
+    {# CSRF Token #}
+    {# {% csrf_token %}#}
+    {##}
+    {# non-field errors #}
+    {# {% if form.non_field_errors %}#}
+    {#
+    <div class="alert alert-danger">#}
+      {# {% for error in form.non_field_errors %}#}
+      {#
+      <div>{{ error }}</div>
+      #}
+      {# {% endfor %}#}
+      {#
+    </div>
+    #}
+    {# {% endif %}#}
+    {##}
+    {# Username #}
+    {#
+    <div class="mb-3">#}
+      {# <label for="{{ form.username.id_for_label }}" #}
+                {# class="form-label text-white">#}
+        {# {{ form.username.label }}#}
+        {# </label>#}
+      {# {{ form.username|add_class:"form-control bg-dark text-white
+      border-secondary" }}#}
+      {# {% for error in form.username.errors %}#}
+      {#
+      <div class="invalid-feedback d-block">{{ error }}</div>
+      #}
+      {# {% endfor %}#}
+      {#
+    </div>
+    #}
+    {##}
+    {# First name #}
+    {#
+    <div class="mb-3">#}
+      {# <label for="{{ form.first_name.id_for_label }}" #}
+                {# class="form-label text-white">#}
+        {# {{ form.first_name.label }}#}
+        {# </label>#}
+      {# {{ form.first_name|add_class:"form-control bg-dark text-white
+      border-secondary" }}#}
+      {# {% for error in form.first_name.errors %}#}
+      {#
+      <div class="invalid-feedback d-block">{{ error }}</div>
+      #}
+      {# {% endfor %}#}
+      {#
+    </div>
+    #}
+    {##}
+    {# Last name #}
+    {#
+    <div class="mb-3">#}
+      {# <label for="{{ form.last_name.id_for_label }}" #}
+                {# class="form-label text-white">#}
+        {# {{ form.last_name.label }}#}
+        {# </label>#}
+      {# {{ form.last_name|add_class:"form-control bg-dark text-white
+      border-secondary" }}#}
+      {# {% for error in form.last_name.errors %}#}
+      {#
+      <div class="invalid-feedback d-block">{{ error }}</div>
+      #}
+      {# {% endfor %}#}
+      {#
+    </div>
+    #}
+    {##}
+    {# Email #}
+    {#
+    <div class="mb-3">#}
+      {# <label for="{{ form.email.id_for_label }}" #}
+                {# class="form-label text-white">#}
+        {# {{ form.email.label }}#}
+        {# </label>#}
+      {# {{ form.email|add_class:"form-control bg-dark text-white
+      border-secondary" }}#}
+      {# {% for error in form.email.errors %}#}
+      {#
+      <div class="invalid-feedback d-block">{{ error }}</div>
+      #}
+      {# {% endfor %}#}
+      {#
+    </div>
+    #}
+    {##}
+    {# Password1 #}
+    {#
+    <div class="mb-3">#}
+      {# <label for="{{ form.password1.id_for_label }}" #}
+                {# class="form-label text-white">#}
+        {# {{ form.password1.label }}#}
+        {# </label>#}
+      {# {{ form.password1|add_class:"form-control bg-dark text-white
+      border-secondary" }}#}
+      {# {% for error in form.password1.errors %}#}
+      {#
+      <div class="invalid-feedback d-block">{{ error }}</div>
+      #}
+      {# {% endfor %}#}
+      {#
+    </div>
+    #}
+    {##}
+    {# Password2 #}
+    {#
+    <div class="mb-3">#}
+      {# <label for="{{ form.password2.id_for_label }}" #}
+                {# class="form-label text-white">#}
+        {# {{ form.password2.label }}#}
+        {# </label>#}
+      {# {{ form.password2|add_class:"form-control bg-dark text-white
+      border-secondary" }}#}
+      {# {% for error in form.password2.errors %}#}
+      {#
+      <div class="invalid-feedback d-block">{{ error }}</div>
+      #}
+      {# {% endfor %}#}
+      {#
+    </div>
+    #}
+    {##}
+    {##}
+    {# Submit button #}
+    {#
+    <button type="submit" class="btn btn-primary w-100 mt-4">#}
+      {# Sign up#}
+      {#
+    </button>
+    #}
+    {#
+  </form>
+  #}
+  {#
+</div>#}
+{#{% endblock %}#}

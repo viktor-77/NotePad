@@ -10,6 +10,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "widget_tweaks",
     'myapp',
 ]
 
@@ -73,6 +74,9 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# User model
+AUTH_USER_MODEL = 'myapp.User'
 
 # Login & Logout
 LOGIN_REDIRECT_URL = '/'
