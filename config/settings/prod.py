@@ -13,8 +13,6 @@ DEBUG = False
 
 # SECURITY WARNING
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
-if not ALLOWED_HOSTS or ALLOWED_HOSTS == [""]:
-    raise ImproperlyConfigured("ALLOWED_HOSTS must be set")
 
 ALLOWED_HOSTS.append("instaload-sl70.onrender.com")
 
