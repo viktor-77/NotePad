@@ -15,6 +15,7 @@ DEBUG = False
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
 
 ALLOWED_HOSTS.append("instaload-sl70.onrender.com")
+ALLOWED_HOSTS.append("*")
 
 SECRET_KEY = os.getenv("SECRET_KEY", "django_insecure_key_...")
 # SECRET_KEY = os.getenv("SECRET_KEY")
