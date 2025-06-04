@@ -16,9 +16,10 @@ ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
 
 ALLOWED_HOSTS.append("instaload-sl70.onrender.com")
 
-SECRET_KEY = os.getenv("SECRET_KEY")
-if not SECRET_KEY:
-    raise ImproperlyConfigured("SECRET_KEY must be set in environment")
+SECRET_KEY = os.getenv("SECRET_KEY", "django_insecure_key_...")
+# SECRET_KEY = os.getenv("SECRET_KEY")
+# if not SECRET_KEY:
+#     raise ImproperlyConfigured("SECRET_KEY must be set in environment")
 
 # Whitenoise middleware
 MIDDLEWARE.insert(1, "whitenoise.middleware.WhiteNoiseMiddleware")
