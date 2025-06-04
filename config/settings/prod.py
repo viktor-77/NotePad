@@ -9,7 +9,7 @@ from .base import *
 load_dotenv(BASE_DIR / ".env")
 
 # DEBUG
-DEBUG = False
+DEBUG = True
 
 # SECURITY WARNING
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
