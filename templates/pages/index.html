@@ -83,21 +83,23 @@
         <h5 class="text-info">Мої нотатки</h5>
         <ul class="list-group">
 
-          {% for note in notes %}
-            <li class="list-group-item dark-grey border-secondary">
-              <a href="{% url "myapp:note_detail" note.pk %}"
-                 class="light-blue">
-                {{ note }}
-              </a>
-              <small class="d-block text-light">
-                {{ note.created_at|date:"Y‑m‑d H:i" }}
-              </small>
-            </li>
-          {% empty %}
-            <li class="list-group-item dark-grey text-light border-secondary">
-              Нотаток поки немає.
-            </li>
-          {% endfor %}
+          {% if notes %}
+            {% for note in notes %}
+              <li class="list-group-item dark-grey border-secondary">
+                <a href="{% url "myapp:note_detail" note.pk %}"
+                   class="light-blue">
+                  {{ note }}
+                </a>
+                <small class="d-block text-light">
+                  {{ note.created_at|date:"Y‑m‑d H:i" }}
+                </small>
+              </li>
+            {% empty %}
+              <li class="list-group-item dark-grey text-light border-secondary">
+                Нотаток поки немає.
+              </li>
+            {% endfor %}
+          {% endif %}
         </ul>
       </div>
     </div>
