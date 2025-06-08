@@ -15,12 +15,6 @@ A simple online notepad on Django: create, view, and edit notes.
 ![image](https://github.com/user-attachments/assets/91cd5bdc-a34d-492e-b836-72542a149ad3)
 ![image](https://github.com/user-attachments/assets/b10e0068-5862-4cea-a443-da1a199c5456)
 
----
-
-##  Technology stack:
-- **Python 3.11+**
-- **Django 5.x**
-- **Bootstrap 5**
 
 ---
 
@@ -63,3 +57,9 @@ A simple online notepad on Django: create, view, and edit notes.
    ```
    http://127.0.0.1:8000/
    ```
+---
+
+##  Technology stack:
+- **Python 3.11+**
+- **Django 5.x**
+- **Bootstrap 5**
