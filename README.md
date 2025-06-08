@@ -2,8 +2,6 @@
 
 A simple online notepad on Django: create, view, and edit notes.
 
----
-
 ## Main features:
 - Create a new note.
 - View a list of all notes.
