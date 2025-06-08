@@ -55,7 +55,10 @@ A simple online notepad on Django: create, view, and edit notes.
    ```
    http://127.0.0.1:8000/
    ```
----
+##  Demo
+
+[https://it-company-task-manager-ry1b.onrender.com/](https://notepad-zzv5.onrender.com)
+
 
 ##  Technology stack:
 - **Python 3.11+**
