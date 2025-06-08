@@ -51,7 +51,7 @@ A simple online notepad on Django: create, view, and edit notes.
    python manage.py runserver
    ```
 
-7. **Перейти в браузері:**
+7. **Go to:**
    ```
    http://127.0.0.1:8000/
    ```
